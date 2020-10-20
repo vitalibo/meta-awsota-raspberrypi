@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest>
+    <remote fetch="git://git.yoctoproject.org" name="yocto"/>
+    <remote fetch="git://git.openembedded.org" name="openembedded"/>
+    <remote fetch="git://github.com/mendersoftware" name="mender"/>
+    <remote fetch="git://github.com/agherzan" name="rpi"/>
+    <remote fetch="git://github.com/aws" name="aws"/>
+
+    <project name="poky" remote="yocto" revision="dunfell" path="src/poky"/>
+    <project name="meta-openembedded" remote="openembedded" revision="dunfell" path="src/meta-openembedded"/>
+    <project name="meta-mender" remote="mender" revision="dunfell" path="src/meta-mender"/>
+    <project name="meta-mender-community" remote="mender" revision="dunfell" path="src/meta-mender-community"/>
+    <project name="meta-raspberrypi" remote="rpi" revision="dunfell" path="src/meta-raspberrypi"/>
+    <project name="meta-aws" remote="aws" revision="dunfell" path="src/meta-aws"/>
+</manifest>

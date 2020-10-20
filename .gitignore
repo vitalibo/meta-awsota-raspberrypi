@@ -1,0 +1,6 @@
+.idea/
+.repo/
+src/
+!src/meta-awsota-raspberrypi/
+build/
+!build/conf/
