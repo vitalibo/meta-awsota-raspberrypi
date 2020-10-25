@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/shared"
   config.vm.disk :disk, size: "50GB", primary: true
+  config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.0.33"
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
