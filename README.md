@@ -6,10 +6,11 @@ This Yocto meta layer contains necessary recipes for integrate AWS IoT, Mender a
 In order to start building own Yocto images you need setup local environment
 
 ```bash
-make setup
+git clone --recursive git@github.com:vitalibo/meta-awsota-raspberrypi.git
+vagrant up
 ```
 
-After syncup sources and setup VM, you can login to VM using following command:
+After clone sources and setup VM, you can login to VM using following command:
 
 ```bash
 vagrant ssh
@@ -25,7 +26,7 @@ After successful build setup HTTP server to browse build artifacts.
 Server by default accessible on [http://192.168.0.33:8000](http://192.168.0.33:8000) address.
 
 ```bash
-make http_server
+vagrant@ubuntu-bionic:$ python3 -m http.server
 ```
 
 Interesting for us are the two files:
@@ -50,7 +51,7 @@ pi@rpi4:$ mender -commit # or -rollback
 To destroy VM use:
 
 ```bash
-make shutdown
+vagrant destroy
 ```
 
 ### Resources
