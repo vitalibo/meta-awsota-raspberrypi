@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-ENV['VAGRANT_EXPERIMENTAL'] = "disks"
+ENV['VAGRANT_EXPERIMENTAL'] = "typed_triggers,disks"
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
@@ -36,8 +36,7 @@ Vagrant.configure("2") do |config|
       python3-pexpect \
       xz-utils \
       debianutils \
-      iputils-ping \
-      repo
+      iputils-ping
 
     # Workaround for "Error: [Errno 1] Operation not permitted." 
     # that happens when Yocto build directory is shared folder in VirtualBox.
@@ -45,13 +44,22 @@ Vagrant.configure("2") do |config|
     ln -s /shared/build/conf /project/build/conf
     ln -s /shared/src /project/src
     chown -R vagrant:vagrant /project
+    rsync -ah /shared/build/sstate-cache/ /project/build/sstate-cache/
 
     cat <<'    EOT' >> /home/vagrant/.bashrc
       cd /project/
       . src/poky/oe-init-build-env build
       export DL_DIR="/shared/build/downloads"
-      export SSTATE_DIR="/shared/build/sstate-cache"
-      export BB_ENV_EXTRAWHITE="$BB_ENV_EXTRAWHITE DL_DIR SSTATE_DIR"
+      export BB_ENV_EXTRAWHITE="$BB_ENV_EXTRAWHITE DL_DIR"
     EOT
   SHELL
+
+  config.trigger.before :halt, :destroy do |trigger|
+    trigger.warn = "Synchronize sstate cache dir ..."
+    trigger.run_remote = {
+        inline: <<-SHELL
+          rsync -ahc /project/build/sstate-cache/ /shared/build/sstate-cache/
+        SHELL
+    }
+  end
 end

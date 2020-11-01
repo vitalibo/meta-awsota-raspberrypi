@@ -1,6 +1,5 @@
 .idea/
 .vagrant/
-!build/
-build/*
-!build/conf/
+build/downloads/
+build/sstate-cache/
 /*.log
