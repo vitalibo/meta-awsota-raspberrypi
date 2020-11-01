@@ -22,6 +22,12 @@ Inside VM, you can perform following command to build images (also, available `c
 vagrant@ubuntu-bionic:$ bitbake core-image-full-cmdline
 ```
 
+Now you can create a package feed, for this you need to update repo package indexes.
+
+```
+vagrant@ubuntu-bionic:$ bitbake package-index
+```
+
 After successful build setup HTTP server to browse build artifacts. 
 Server by default accessible on [http://192.168.0.33:8000](http://192.168.0.33:8000) address.
 
