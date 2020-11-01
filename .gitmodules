@@ -1,0 +1,29 @@
+[submodule "poky"]
+	path = src/poky
+	url = git://git.yoctoproject.org/poky
+	branch = dunfell
+
+[submodule "meta-java"]
+	path = src/meta-java
+	url = git://git.yoctoproject.org/meta-java
+	branch = dunfell
+
+[submodule "meta-openembedded"]
+	path = src/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = dunfell
+
+[submodule "meta-raspberrypi"]
+	path = src/meta-raspberrypi
+	url = git://github.com/agherzan/meta-raspberrypi
+	branch = dunfell
+
+[submodule "meta-mender"]
+	path = src/meta-mender
+	url = git://github.com/mendersoftware/meta-mender
+	branch = dunfell
+
+[submodule "meta-aws"]
+	path = src/meta-aws
+	url = git://github.com/aws/meta-aws
+	branch = dunfell

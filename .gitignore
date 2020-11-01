@@ -1,9 +1,5 @@
 .idea/
-.repo/
 .vagrant/
-!src/
-src/*
-!src/meta-awsota-raspberrypi/
 !build/
 build/*
 !build/conf/
