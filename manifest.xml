@@ -7,6 +7,7 @@
     <remote fetch="git://github.com/aws" name="aws"/>
 
     <project name="poky" remote="yocto" revision="dunfell" path="src/poky"/>
+    <project name="meta-java" remote="yocto" revision="dunfell" path="src/meta-java"/>
     <project name="meta-openembedded" remote="openembedded" revision="dunfell" path="src/meta-openembedded"/>
     <project name="meta-mender" remote="mender" revision="dunfell" path="src/meta-mender"/>
     <project name="meta-mender-community" remote="mender" revision="dunfell" path="src/meta-mender-community"/>
