@@ -41,6 +41,13 @@ Interesting for us are the two files:
 - `tmp/deploy/images/raspberrypi4/core-image-full-cmdline-raspberrypi4.mender`
 
 The first one (with `.sdimg` suffix) is disk image that need to use for initial provision a new device (see [official instruction](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/2)).
+Follow this instruction copying an operating system image to an SD card using Mac OS.
+
+```bash
+diskutil unmountDisk /dev/diskN     # replace N with SD card device number
+sudo dd bs=1m if=core-image-full-cmdline-raspberrypi4.sdimg of=/dev/rdiskN; sync
+```
+
 Another (with `.mender` suffix) can be used for OTA updates. This command should perform on a device.
 
 ```bash
