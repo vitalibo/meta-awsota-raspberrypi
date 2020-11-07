@@ -27,3 +27,8 @@
 	path = src/meta-aws
 	url = git://github.com/aws/meta-aws
 	branch = dunfell
+
+[submodule "meta-virtualization"]
+	path = src/meta-virtualization
+	url = git://git.yoctoproject.org/meta-virtualization
+	branch = dunfell
