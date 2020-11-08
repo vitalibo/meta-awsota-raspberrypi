@@ -74,5 +74,33 @@ To destroy VM use:
 vagrant destroy
 ```
 
+### AWS IoT Device Tester for AWS IoT Greengrass
+
+```
+========== Test Summary ==========
+Execution Time: 	9m46s
+Tests Completed: 	20
+Tests Passed: 		19
+Tests Failed: 		1
+Tests Skipped: 		0
+----------------------------------
+Test Groups:
+    mqtt:                             PASSED
+    ota:                              PASSED
+    deployment:                       PASSED
+    version:                          PASSED
+    ggcdependencies:                  PASSED
+Optional Test Groups:
+    containerdependencies:            PASSED
+    dockerdependencies:               FAILED
+    ggcstreammanagementdependencies:  PASSED
+    deploymentcontainer:              PASSED
+----------------------------------
+Failed Tests:
+    Group Name: dockerdependencies
+        Test Name: Test Docker Python Version docker_python_version
+            Reason: [Error: 126] DependenciesNotPresentError: The following dependencies do not exist: Python 3.7 was not found. Please make sure Python 3.7 is installed and can be ran from the python3.7 command. Details: Failed to run 'python3.7 --version' command: command exited unsuccessfully: Command 'python3.7 --version' exited with code 127. Error output: sh: python3.7: command not found
+```
+
 ### Resources
 - [AWS IoT Jobs and Mender integration Demo](https://github.com/aws-samples/aws-iot-jobs-full-system-update)
