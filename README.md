@@ -48,6 +48,13 @@ diskutil unmountDisk /dev/diskN     # replace N with SD card device number
 sudo dd bs=1m if=core-image-full-cmdline-raspberrypi4.sdimg of=/dev/rdiskN; sync
 ```
 
+Download your GreenGrass Core security resources and configuration file and put it to SD card.
+
+```bash
+mkdir -p /Volumes/boot/greengrass/
+tar -xf xxxxxxxxxx-setup.tar.gz -C /Volumes/boot/greengrass/
+```
+
 Another (with `.mender` suffix) can be used for OTA updates. This command should perform on a device.
 
 ```bash
